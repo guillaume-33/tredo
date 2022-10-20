@@ -1,0 +1,55 @@
+.home_title{
+  text-align: center;
+}
+
+#landing_page{
+  margin: auto;
+}
+
+.travail{
+  background-image: url("../../img/img_home/liste_ordi.jpg");
+}
+
+.maison{
+  background-image: url("../../img/img_home/list_papier.jpg");
+}
+
+.amis{
+  background-image: url("../../img/img_home/post_it.jpg");
+}
+
+.mobile{
+  background-image: url("../../img/img_home/phone.jpg");
+}
+.vue_haut{
+  display: flex;
+  width: 80vw;
+  height: 60vh;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+.vue_bas{
+  display: flex;
+  width: 80vw;
+  height: 60vh;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+.home_card{
+  width: 45%;
+  height: 100%;
+  border-radius: 15px;
+  background-size:cover ;
+}
+
+.home_card:hover{
+  filter: grayscale(0.8);
+  color: black;
+  text-shadow: #FFFFFF 2px 2px;
+  text-decoration-color: black;
+}
+
+.text_img{
+  text-align: center;
+  margin-top: 45%;
+}

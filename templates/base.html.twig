@@ -1,19 +1,62 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <script src="https://kit.fontawesome.com/d52417226a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ asset("assets/style/css/style.css") }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<header class="header">
+
+    <img src="{{ asset('assets/img/logo/logo_small.png') }}" alt="logo">
+    <div class="header__mobile" onclick="openMenu()">
+        <i class="fa-solid fa-bars burger_menu"></i>
+    </div>
+
+</header>
+
+<nav class="nav-mobile">
+    <div class="header__mobile_close" onclick="openMenu()">
+        <i class="fa-solid fa-xmark mobile-overlay"></i>
+    </div>
+    <div class="nav-mobile__profil">
+        <img src="{{ asset('assets/img/img_profil.jpg') }}" alt="photo de profil">
+
+        <span class="name">app.user.prenom</span>
+        <div class="action">
+            <a href="">Mes listes</a>
+            <a href="">Déconnexion</a>
+        </div>
+    </div>
+    <ul class="nav-mobile__menu">
+        <li><a href="">
+                <i class="fa-thin fa-house-user"></i>
+                Accueil</a></li>
+        <li><a href="">
+                <i class="fa-thin fa-list"></i>
+                Inscription</a></li>
+        <li><a href="">
+                <i class="fa-light fa-right-to-bracket"></i>
+                Connexion</a></li>
+    </ul>
+</nav>
+
+<div class="mobile-overlay" onclick="openMenu()"></div>
+{% block main %}{% endblock %}
+<script src="{{ asset('assets/js/script.js') }}"></script>
+</body>
 </html>
+
