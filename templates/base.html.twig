@@ -39,7 +39,7 @@
         <span class="name">{{ app.user.prenom }}</span>
         <div class="action">
             <a href="">Mes listes</a>
-            <a href="">Déconnexion</a>
+            <a href="{{ path('app_logout') }}">Déconnexion</a>
         </div>
     </div>
     {% endif %}
@@ -47,7 +47,7 @@
         <li><a href="{{ path ('home') }}">
                 <i class="fa-thin fa-house-user"></i>
                 Accueil</a></li>
-        <li><a href="">
+        <li><a href="{{ path('inscription') }}">
                 <i class="fa-thin fa-list"></i>
                 Inscription</a></li>
         <li><a href="{{ path('app_login') }}">
