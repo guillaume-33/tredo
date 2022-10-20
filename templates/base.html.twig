@@ -21,7 +21,7 @@
 <body>
 <header class="header">
 
-    <img src="{{ asset('assets/img/logo/logo_small.png') }}" alt="logo">
+    <a href="{{ path ("home") }}"><img src="{{ asset('assets/img/logo/logo_small.png') }}" alt="logo"></a>
     <div class="header__mobile" onclick="openMenu()">
         <i class="fa-solid fa-bars burger_menu"></i>
     </div>
@@ -33,6 +33,7 @@
         <i class="fa-solid fa-xmark mobile-overlay"></i>
     </div>
     <div class="nav-mobile__profil">
+        {% if app.user %}
         <img src="{{ asset('assets/img/img_profil.jpg') }}" alt="photo de profil">
 
         <span class="name">app.user.prenom</span>
@@ -41,14 +42,15 @@
             <a href="">Déconnexion</a>
         </div>
     </div>
+    {% endif %}
     <ul class="nav-mobile__menu">
-        <li><a href="">
+        <li><a href="{{ path ('home') }}">
                 <i class="fa-thin fa-house-user"></i>
                 Accueil</a></li>
         <li><a href="">
                 <i class="fa-thin fa-list"></i>
                 Inscription</a></li>
-        <li><a href="">
+        <li><a href="{{ path('app_login') }}">
                 <i class="fa-light fa-right-to-bracket"></i>
                 Connexion</a></li>
     </ul>
